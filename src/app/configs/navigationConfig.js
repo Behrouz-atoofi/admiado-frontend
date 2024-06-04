@@ -24,7 +24,7 @@ const navigationConfig = [
       {
         id: 'dashboards.project',
         title: 'Project',
-        translate: 'پروژه',
+        translate: '',
         type: 'item',
         icon: 'heroicons-outline:clipboard-check',
         url: '/dashboards/project',
