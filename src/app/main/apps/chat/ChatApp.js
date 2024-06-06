@@ -67,7 +67,6 @@ function ChatApp(props) {
     >
       <Root
         content={<Outlet />}
-        leftSidebarContent={<MainSidebar />}
         leftSidebarOpen={mainSidebarOpen}
         leftSidebarOnClose={() => {
           setMainSidebarOpen(false);

@@ -243,12 +243,6 @@ function Chat(props) {
               <div className="flex items-center relative">
                 <IconButton className="" type="submit" size="large">
                   <FuseSvgIcon className="text-24" color="action">
-                    heroicons-outline:emoji-happy
-                  </FuseSvgIcon>
-                </IconButton>
-
-                <IconButton className="" type="submit" size="large">
-                  <FuseSvgIcon className="text-24" color="action">
                     heroicons-outline:paper-clip
                   </FuseSvgIcon>
                 </IconButton>
