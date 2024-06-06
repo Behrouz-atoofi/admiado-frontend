@@ -57,7 +57,7 @@ const FusePageSimpleSidebar = forwardRef((props, ref) => {
           }}
           style={{ position: 'absolute' }}
         >
-          <FusePageSimpleSidebarContent {...props} />
+
         </SwipeableDrawer>
       </Hidden>
 

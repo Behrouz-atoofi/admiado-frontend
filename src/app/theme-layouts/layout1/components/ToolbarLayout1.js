@@ -11,7 +11,7 @@ import AdjustFontSize from '../../shared-components/AdjustFontSize';
 import FullScreenToggle from '../../shared-components/FullScreenToggle';
 import LanguageSwitcher from '../../shared-components/LanguageSwitcher';
 import NavbarToggleButton from '../../shared-components/NavbarToggleButton';
-
+import UserMenu from '../../shared-components/UserMenu';
 function ToolbarLayout1(props) {
   const config = useSelector(selectFuseCurrentLayoutConfig);
   const navbar = useSelector(selectFuseNavbar);
@@ -62,7 +62,7 @@ function ToolbarLayout1(props) {
             <FullScreenToggle />
 
           </div>
-
+          <UserMenu />
           {config.navbar.display && config.navbar.position === 'right' && (
             <>
               <Hidden lgDown>
