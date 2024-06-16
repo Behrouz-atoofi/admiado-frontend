@@ -190,7 +190,6 @@ function Chat(props) {
               </Typography>
             </div>
           </div>
-
         </Toolbar>
       </Box>
 
@@ -208,7 +207,7 @@ function Chat(props) {
                       key={i}
                       className={clsx(
                         'flex flex-col grow-0 shrink-0 items-start justify-end relative px-16 pb-4',
-                        item.contactId === user.id ? 'me' : 'contact',
+                        item.sender === 'user' ? 'me' : 'contact',
                         { 'first-of-group': isFirstMessageOfGroup(item, i) },
                         { 'last-of-group': isLastMessageOfGroup(item, i) },
                         i + 1 === chat.length && 'pb-96'
@@ -255,7 +254,7 @@ function Chat(props) {
                   autoFocus={false}
                   id="message-input"
                   className="flex-1 flex grow shrink-0 h-44 mx-8 px-16 border-2 rounded-full"
-                  placeholder="Type your message"
+                  placeholder="پیام خود را وارد کنید"
                   onChange={onInputChange}
                   value={messageText}
                   sx={{ backgroundColor: 'background.paper' }}

@@ -3,7 +3,7 @@ import { createAsyncThunk, createEntityAdapter, createSlice } from '@reduxjs/too
 import axios from 'axios';
 
 export const getChats = createAsyncThunk('chatApp/chats/getChats', async (params) => {
-  const response = await axios.get('http://localhost:8181/api/v1/training/chat');
+  const response = await axios.get('/api/chat/chats', { params });
   const data = await response.data;
 
   return data;

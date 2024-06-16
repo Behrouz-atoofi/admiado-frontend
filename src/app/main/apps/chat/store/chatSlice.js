@@ -13,7 +13,13 @@ export const getChat = createAsyncThunk(
 export const sendMessage = createAsyncThunk(
   'chatApp/chat/sendMessage',
   async ({ messageText }, { dispatch, getState }) => {
+    // Dispatch addUserMessage before making the API request
+    dispatch(addUserMessage({ messageText }));
+
     const response = await axios.post(`http://localhost:8181/api/v1/training/chat?message=${encodeURIComponent(messageText)}`);
+
+    dispatch(getChats());
+
     return response.data;
   }
 );
@@ -23,20 +29,35 @@ const chatSlice = createSlice({
   initialState: [],
   reducers: {
     removeChat: (state, action) => action.payload,
+    addUserMessage: (state, action) => {
+      state.push({
+        text: action.payload.messageText,
+        createdAt: new Date().toISOString(),
+        sender: 'user'
+      });
+    },
+    addBotMessage: (state, action) => {
+      state.push({
+        text: action.payload.message,
+        createdAt: action.payload.createdAt || new Date().toISOString(),
+        sender: 'bot'
+      });
+    },
   },
   extraReducers: {
     [getChat.fulfilled]: (state, action) => action.payload,
     [sendMessage.fulfilled]: (state, action) => {
+      // Use addBotMessage to handle the bot's response
       state.push({
         text: action.payload.message,
-        createdAt: action.payload.CreatedAt || new Date().toISOString(),
+        createdAt: action.payload.createdAt || new Date().toISOString(),
         sender: 'bot'
       });
-    }
-  }
+    },
+  },
 });
 
-export const { removeChat, addUserMessage } = chatSlice.actions;
+export const { removeChat, addUserMessage, addBotMessage } = chatSlice.actions;
 
 export const selectChat = ({ chatApp }) => chatApp.chat;
 
