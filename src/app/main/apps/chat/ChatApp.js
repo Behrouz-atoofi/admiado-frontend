@@ -6,8 +6,6 @@ import { useDispatch } from 'react-redux';
 import { Outlet, useLocation } from 'react-router-dom';
 import FusePageSimple from '@fuse/core/FusePageSimple';
 import useThemeMediaQuery from '@fuse/hooks/useThemeMediaQuery';
-import MainSidebar from './sidebars/main/MainSidebar';
-import ContactSidebar from './sidebars/contact/ContactSidebar';
 import reducer from './store';
 import { getUserData } from './store/userSlice';
 import { getContacts } from './store/contactsSlice';
@@ -72,7 +70,6 @@ function ChatApp(props) {
           setMainSidebarOpen(false);
         }}
         leftSidebarWidth={400}
-        rightSidebarContent={<ContactSidebar />}
         rightSidebarOpen={contactSidebarOpen}
         rightSidebarOnClose={() => {
           setContactSidebarOpen(false);

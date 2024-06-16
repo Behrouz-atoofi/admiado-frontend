@@ -48,16 +48,16 @@ function ProfileApp() {
                 <Avatar
                   sx={{ borderColor: 'background.paper' }}
                   className="w-128 h-128 border-4"
-                  src="assets/images/avatars/fatemeh-kazemi.jpg"
-                  alt="فاطمه کاظمی"
-                  title="فاطمه کاظمی"
+                  src="assets/images/avatars/behrouz.jpg"
+                  alt="بهروز عطوفی"
+                  title="بهروز عطوفی"
                 />
               </motion.div>
             </div>
 
             <div className="flex flex-col items-center lg:items-start mt-16 lg:mt-0 lg:ml-32">
-              <Typography className="text-lg font-bold leading-none">فاطمه کاظمی</Typography>
-              <Typography color="text.secondary">ایران، تهران</Typography>
+              <Typography className="text-lg font-bold leading-none">بهروز عطوفی</Typography>
+              <Typography color="text.secondary">ایران، اصفهان</Typography>
             </div>
 
             <div className="hidden lg:flex h-32 mx-32 border-l-2" />

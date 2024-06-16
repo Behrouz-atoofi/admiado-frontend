@@ -63,7 +63,7 @@ function CompactInvoicePage() {
             </div>
 
             <div className="text-md">
-              <Typography className="text-xl font-medium">فاطمه کاظمی</Typography>
+              <Typography className="text-xl font-medium">بهروز عطوفی</Typography>
               <Typography>بین خیابان جواهریان و ضیایی، نرسیده به پارک، خیابان گلها، </Typography>
               <Typography>hughes.brian@company.com</Typography>
               <Typography>+98  552 455 87</Typography>

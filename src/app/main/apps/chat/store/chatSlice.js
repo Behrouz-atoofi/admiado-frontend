@@ -6,23 +6,15 @@ export const getChat = createAsyncThunk(
   'chatApp/chat/getChat',
   async (contactId, { dispatch, getState }) => {
     const response = await axios.get(`/api/chat/chats/${contactId}`);
-
-    const data = await response.data;
-
-    return data;
+    return response.data;
   }
 );
 
 export const sendMessage = createAsyncThunk(
   'chatApp/chat/sendMessage',
-  async ({ messageText, chatId, contactId }, { dispatch, getState }) => {
-    const response = await axios.post(`/api/chat/chats/${contactId}`, messageText);
-
-    const data = await response.data;
-
-    dispatch(getChats());
-
-    return data;
+  async ({ messageText }, { dispatch, getState }) => {
+    const response = await axios.post(`http://localhost:8181/api/v1/training/chat?message=${encodeURIComponent(messageText)}`);
+    return response.data;
   }
 );
 
@@ -34,9 +26,17 @@ const chatSlice = createSlice({
   },
   extraReducers: {
     [getChat.fulfilled]: (state, action) => action.payload,
-    [sendMessage.fulfilled]: (state, action) => [...state, action.payload],
-  },
+    [sendMessage.fulfilled]: (state, action) => {
+      state.push({
+        text: action.payload.message,
+        createdAt: action.payload.CreatedAt || new Date().toISOString(),
+        sender: 'bot'
+      });
+    }
+  }
 });
+
+export const { removeChat, addUserMessage } = chatSlice.actions;
 
 export const selectChat = ({ chatApp }) => chatApp.chat;
 

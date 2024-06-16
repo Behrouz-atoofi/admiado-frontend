@@ -24,7 +24,7 @@ const schema = yup.object().shape({
 });
 
 const defaultValues = {
-  name: 'فاطمه کاظمی',
+  name: 'بهروز عطوفی',
   password: '',
 };
 
@@ -110,7 +110,7 @@ function FullScreenUnlockSessionPage() {
             <Typography className="mt-32 text-md font-medium" color="text.secondary">
               <span>من نیستم</span>
               <Link className="ml-4" to="/sign-in">
-                فاطمه کاظمی
+                بهروز عطوفی
               </Link>
             </Typography>
           </form>

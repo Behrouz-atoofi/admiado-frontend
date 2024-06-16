@@ -15,7 +15,6 @@ import { getChat, selectChat, sendMessage } from '../store/chatSlice';
 import { selectContactById } from '../store/contactsSlice';
 import { selectUser } from '../store/userSlice';
 import ContactAvatar from '../ContactAvatar';
-import ChatMoreMenu from './ChatMoreMenu';
 import { ChatAppContext } from '../ChatApp';
 
 const StyledMessageRow = styled('div')(({ theme }) => ({
@@ -191,7 +190,7 @@ function Chat(props) {
               </Typography>
             </div>
           </div>
-          <ChatMoreMenu className="-mx-8" />
+
         </Toolbar>
       </Box>
 
@@ -201,6 +200,9 @@ function Chat(props) {
             {chat?.length > 0 && (
               <div className="flex flex-col pt-16 px-16 pb-40">
                 {chat.map((item, i) => {
+                  const createdAt = new Date(item.createdAt);
+                  const isValidDate = !isNaN(createdAt.getTime());
+
                   return (
                     <StyledMessageRow
                       key={i}
@@ -213,12 +215,14 @@ function Chat(props) {
                       )}
                     >
                       <div className="bubble flex relative items-center justify-center p-12 max-w-full">
-                        <div className="leading-tight whitespace-pre-wrap">{item.value}</div>
+                        <div className="leading-tight whitespace-pre-wrap">{item.text}</div>
                         <Typography
                           className="time absolute hidden w-full text-11 mt-8 -mb-24 ltr:left-0 rtl:right-0 bottom-0 whitespace-nowrap"
                           color="text.secondary"
                         >
-                          {formatDistanceToNow(new Date(item.createdAt), { addSuffix: true })}
+                          {isValidDate
+                            ? formatDistanceToNow(createdAt, { addSuffix: true })
+                            : 'Invalid Date'}
                         </Typography>
                       </div>
                     </StyledMessageRow>
@@ -251,7 +255,7 @@ function Chat(props) {
                   autoFocus={false}
                   id="message-input"
                   className="flex-1 flex grow shrink-0 h-44 mx-8 px-16 border-2 rounded-full"
-                  placeholder="پیام خود را بنویسید"
+                  placeholder="Type your message"
                   onChange={onInputChange}
                   value={messageText}
                   sx={{ backgroundColor: 'background.paper' }}
