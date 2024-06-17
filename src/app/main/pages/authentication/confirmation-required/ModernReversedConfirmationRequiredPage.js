@@ -59,7 +59,7 @@ function ModernReversedConfirmationRequiredPage() {
 
           <div className="z-10 relative w-full max-w-2xl">
             <div className="text-7xl font-bold leading-none text-gray-100">
-              <div>به تیم ما</div>
+              <div>به ادمیادو</div>
               <div>خوش آمدید</div>
             </div>
             <div className="mt-24 text-lg tracking-tight leading-6 text-gray-400">
@@ -80,7 +80,7 @@ function ModernReversedConfirmationRequiredPage() {
               </AvatarGroup>
 
               <div className="ml-16 font-medium tracking-tight text-gray-400">
-                خرید بیش از 9 هزار نفر در سایت رسمی تم فارست
+  به ما بپیوندید
               </div>
             </div>
           </div>

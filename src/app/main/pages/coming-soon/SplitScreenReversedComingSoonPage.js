@@ -87,12 +87,10 @@ function SplitScreenReversedComingSoonPage() {
 
         <div className="z-10 relative w-full max-w-2xl">
           <div className="text-7xl font-bold leading-none text-gray-100">
-            <div>به تیم ما</div>
+            <div>به ادمیادو</div>
             <div>خوش آمدید</div>
           </div>
-          <div className="mt-24 text-lg tracking-tight leading-6 text-gray-400">
-           فیوز به دولوپرها کمک می‌کند تا داشبوردهای سازمان‌یافته و کدگذاری‌شده‌ای با ظاهر بسیار زیبا و سورس بسیار قدرتمند بسازند
-به ما بپیوندید و اپلیکیشن خودتون رو از همین امروز با یک قالب مدیریت مدرن و به روز، توسعه بدید
+          <div className="mt-24 text-lg tracking-tight leading-6 text-gray-400">ما اینجاییم تا فرایند اپلای را برای شما آسان کنیم ....
           </div>
           <div className="flex items-center mt-32">
             <AvatarGroup
@@ -109,7 +107,7 @@ function SplitScreenReversedComingSoonPage() {
             </AvatarGroup>
 
             <div className="ml-16 font-medium tracking-tight text-gray-400">
-              خرید بیش از 9 هزار نفر در سایت رسمی تم فارست
+به ما بپیوندید
             </div>
           </div>
         </div>
